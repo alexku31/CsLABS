@@ -1,25 +1,44 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2026
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab2_1", "lab2_1\lab2_1.csproj", "{2CB491F6-9060-48A8-B3FF-2C04BE6260AB}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2CB491F6-9060-48A8-B3FF-2C04BE6260AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CB491F6-9060-48A8-B3FF-2C04BE6260AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CB491F6-9060-48A8-B3FF-2C04BE6260AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CB491F6-9060-48A8-B3FF-2C04BE6260AB}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {11677294-1288-4E59-A659-E8FA0F236F3F}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab2_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, c;
+            double ab, ac, bc;
+            Console.WriteLine("Введите 2 стороны треугольника и угол между ними");
+            a = Convert.ToDouble(Console.ReadLine());
+            b = Convert.ToDouble(Console.ReadLine());
+            ab = Convert.ToDouble(Console.ReadLine());
+            c = Math.Sqrt(a * a + b * b - 2 * a * b * Math.Cos(ab*Math.PI/180));
+            ac = Math.Acos((b * b + c * c - a * a) / (2 * b * c)) *  180/ Math.PI;
+            bc = 180 - ab - ac;
+            double perimetr = a + b + c;
+            double square = 0.5 * a * b * Math.Sin(ab * Math.PI / 180);
+            double p = perimetr / 2;
+            double rIn = Math.Sqrt(((p-a)*(p-b)*(p-c))/p);
+            double rOut = a * b * c / 4 / square;
+            Console.WriteLine("Стороны треугольника");
+            Console.WriteLine("A=" + a);
+            Console.WriteLine("B=" + b);
+            Console.WriteLine("C=" + c);
+            Console.WriteLine("Углы треугольника");
+            Console.WriteLine("AB=" + ab);
+            Console.WriteLine("BC=" + bc);
+            Console.WriteLine("AC=" + ac);
+            Console.WriteLine("Периметр треугольника="+perimetr);
+            Console.WriteLine("Площадь треугольника=" + square);
+            Console.WriteLine("Радиус вписанной окружности=" + rIn);
+            Console.WriteLine("Радиус описанной окружности=" + rOut);
+            Console.ReadKey();
+        }
+    }
+}
+
