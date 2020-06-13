@@ -1,25 +1,22 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2026
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab2_3", "lab2_3\lab2_3.csproj", "{F16EE9D3-0F37-4E8C-AD4E-C84857757221}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F16EE9D3-0F37-4E8C-AD4E-C84857757221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F16EE9D3-0F37-4E8C-AD4E-C84857757221}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F16EE9D3-0F37-4E8C-AD4E-C84857757221}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F16EE9D3-0F37-4E8C-AD4E-C84857757221}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CF53E3C3-D36D-4DA8-B820-4F174E09D683}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+namespace lab2_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 1; i < 13; i++)
+            {
+                string month =  Convert.ToDateTime("01."+i+".2010").ToString("MMMMMMM", CultureInfo.GetCultureInfo("fr-FR"));
+                Console.WriteLine(month);
+            }
+            Console.ReadKey();
+        }
+    }
+}
